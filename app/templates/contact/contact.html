@@ -1,0 +1,32 @@
+{% extends 'template/base.html' %}
+
+{% block content %}
+{% include 'includes/navbar.html' %}
+<div class="container">
+    <div class="row text-center mb-2 mt-2">
+        <h3>Enviar mensagem</h3>
+    </div>
+    <form action="{{ url_for('contact') }}" method="POST" class="p-2 rounded border shadow">
+        {{ form.csrf_token }}
+        <div class="mb-3">
+            {{ form.name.label() }}
+            {{ form.name(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            {{ form.email.label() }}
+            {{ form.email(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            {{ form.subject.label() }}
+            {{ form.subject(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            {{ form.message.label() }}
+            {{ form.message(class="form-control") }}
+        </div>
+        <div class="text-end">
+            {{ form.submit(class="btn btn-sm btn-primary") }}
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'template/base.html' %}
+
+{% block content %}
+{% include 'includes/navbar.html' %}
+<div class="container">
+    <div class="row text-center mb-2 mt-2">
+        <h3>Detalhe contato</h3>
+    </div>
+    <div class="mb-3">
+        <label for="name">Nome</label>
+        <input class="form-control" type="text" value="{{ contact.name }}" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="Email">Email</label>
+        <input class="form-control" type="text" value="{{ contact.email }}" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="subject">Assunto</label>
+        <input class="form-control" type="text" value="{{ contact.subject}}" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="message">Mensagem</label>
+        <textarea class="form-control" readonly>{{ contact.message}}</textarea>
+    </div>
+    <div class="text-end">
+        <a class="btn btn-primary" href="">Responder</a>
+    </div>
+</div>
+{% endblock %}

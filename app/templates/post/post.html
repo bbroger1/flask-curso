@@ -1,0 +1,25 @@
+{% extends 'template/base.html' %}
+
+{% block content %}
+{% include 'includes/navbar.html' %}
+<div class="container">
+    <div class="row text-center mb-2 mt-2">
+        <h3>Criar post</h3>
+    </div>
+    <form action="{{ url_for('add_post') }}" method="POST" enctype="multipart/form-data"
+        class="p-2 rounded border shadow">
+        {{ form.csrf_token }}
+        <div class="mb-3">
+            {{ form.text.label() }}
+            {{ form.text(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            {{ form.image.label() }}
+            {{ form.image(class="form-control") }}
+        </div>
+        <div class="text-end">
+            {{ form.submit(class="btn btn-sm btn-primary") }}
+        </div>
+    </form>
+</div>
+{% endblock %}

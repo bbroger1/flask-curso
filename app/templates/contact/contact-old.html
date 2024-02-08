@@ -1,0 +1,31 @@
+{% extends 'template/base.html' %}
+{% block content %}
+{% include 'includes/navbar.html' %}
+<div class="container">
+    <div class="row text-center mb-2">
+        <h1>Mensagem</h1>
+    </div>
+    <form action="{{ url_for('contact') }}" method="POST">
+        <div class="mb-3">
+            <label for="name" class="form-label">Nome</label>
+            <input type="text" class="form-control" name="name" id="name">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" id="email">
+        </div>
+        <div class="mb-3">
+            <label for="subject" class="form-label">Assunto</label>
+            <input type="text" class="form-control" name="subject" id="subject">
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Mensagem</label>
+            <textarea class="form-control" name="message" id="message"></textarea>
+        </div>
+        <div class="text-end">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+
+    </form>
+</div>
+{% endblock %}
